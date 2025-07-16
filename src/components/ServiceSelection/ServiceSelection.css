@@ -1,0 +1,99 @@
+/* src/components/ServiceSelection/ServiceSelection.css */
+
+.service-selection-container {
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.service-selection-title {
+  font-size: 2.2em;
+  color: #003366;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.service-cards-grid { /* Nome da classe CORRETO e consistente */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* CORREÇÃO AQUI: 'columns' removido, dois pontos no lugar */
+  gap: 25px;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: #f8f8f8;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #004d99;
+}
+
+.card-name {
+  font-size: 1.6em;
+  color: #003366;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card-description {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-button {
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+}
+
+.card-button:hover {
+  background-color: #cc7a00;
+}
+
+@media (max-width: 768px) {
+  .service-selection-container {
+    padding: 30px 15px;
+    margin: 20px auto;
+  }
+  .service-selection-title {
+    font-size: 1.8em;
+  }
+  .service-cards-grid { /* CORREÇÃO AQUI: nome da classe consistente 'service-cards-grid' */
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    padding: 20px;
+  }
+  .card-name {
+    font-size: 1.4em;
+  }
+  .card-description { /* CORREÇÃO AQUI: chaves e fechamento de bloco */
+    font-size: 0.9em;
+  }
+}

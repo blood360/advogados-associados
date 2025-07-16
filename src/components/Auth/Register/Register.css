@@ -1,0 +1,81 @@
+/* Register.css pode compartilhar muitos estilos com Login.css */
+/* Você pode copiar o conteúdo de Login.css e ajustar ou adicionar o que for específico */
+
+/* Exemplo: */
+.auth-form-container h2 {
+    font-size: 2em;
+    color: #003366;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    border: 1px solid #d32f2f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #555;
+    box-sizing: border-box;
+}
+
+.auth-button {
+    background-color: #004d99; /* Azul para o botão de cadastro */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background-color: #003366;
+}
+
+.auth-switch-text {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.auth-switch-text span {
+    color: #ff9900; /* Laranja para o link de troca */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.auth-switch-text span:hover {
+    color: #cc7a00;
+}

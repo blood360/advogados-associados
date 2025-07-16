@@ -1,0 +1,82 @@
+/* src/index.css */
+
+/* 1. Reset Básico (Melhoria) */
+/* Aplica um reset universal para remover margens e paddings padrão do navegador,
+   e garante que o box-sizing inclua padding e borda no tamanho do elemento. */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Estilos Globais para HTML e BODY */
+/* Estes estilos garantem que a página ocupe 100% da altura e largura da viewport,
+   e define um display flex para o body para gerenciar o layout vertical. */
+html, body {
+  width: 100%;
+  height: 100%; /* Define height: 100% para o html e body */
+}
+
+body {
+  min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura visível */
+  display: flex; /* Habilita o Flexbox no body */
+  flex-direction: column; /* Organiza os filhos (principalmente o #root) em uma coluna */
+  
+  /* Defina a fonte padrão para toda a aplicação aqui. */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+  /* Opcional: Define um background padrão para a página.
+     Seus componentes (Navbar, Hero, etc.) já definem seus próprios backgrounds. */
+  background-color: #f0f2f5; 
+}
+
+/* 3. Estilos para o Contêiner Principal da Aplicação (#root e .App) */
+/* Estes elementos precisam crescer para ocupar o espaço do body e se comportar como um contêiner flexível. */
+#root, .App {
+  width: 100%;
+  flex-grow: 1; /* Permite que #root e .App cresçam e preencham o espaço vertical restante do body */
+  display: flex; /* Habilita Flexbox para os componentes dentro do App */
+  flex-direction: column; /* Organiza os componentes (Navbar, Hero, Main) em uma coluna */
+}
+
+/* 4. Estilos para a tag <main> */
+/* A tag <main> deve ocupar o espaço vertical restante entre a Navbar/Hero e qualquer Rodapé. */
+main {
+  flex-grow: 1; /* Faz com que <main> se expanda e ocupe todo o espaço vertical disponível */
+  display: flex; /* Habilita Flexbox dentro do main para suas seções */
+  flex-direction: column; /* Organiza as seções da página em uma coluna */
+  width: 100%; /* Garante que main ocupe 100% da largura disponível */
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 { /* Seus componentes já estão estilizando h1 */
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button { /* Seus componentes já estão estilizando botões */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

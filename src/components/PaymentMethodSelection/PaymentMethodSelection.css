@@ -1,0 +1,143 @@
+/* src/components/PaymentMethodSelection/PaymentMethodSelection.css */
+
+.payment-selection-container {
+  padding: 40px 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.payment-title {
+  font-size: 2.2em;
+  color: #003366;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.payment-subtitle {
+  font-size: 1.3em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.payment-subtitle strong {
+  color: #ff9900;
+  font-size: 1.2em;
+}
+
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.payment-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 25px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #004d99; /* Borda azul no hover */
+}
+
+.payment-card.selected {
+  border-color: #004d99; /* Borda azul mais forte quando selecionado */
+  background-color: #e6f0fa; /* Fundo mais claro quando selecionado */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.payment-card h3 {
+  font-size: 1.5em;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.payment-card p {
+  font-size: 0.9em;
+  color: #666;
+  flex-grow: 1; /* Para empurrar o logo para baixo se necessário */
+  margin-bottom: 15px;
+}
+
+.payment-logo {
+  max-width: 60px;
+  height: auto;
+  display: block; /* Remove espaçamento indesejado */
+}
+
+.payment-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-button,
+.proceed-button {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border: none;
+}
+
+.back-button {
+  background-color: #6c757d; /* Cinza */
+  color: white;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+.proceed-button {
+  background-color: #ff9900; /* Laranja */
+  color: white;
+}
+
+.proceed-button:hover {
+  background-color: #cc7a00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .payment-selection-container {
+    padding: 20px 15px;
+  }
+  .payment-title {
+    font-size: 1.8em;
+  }
+  .payment-subtitle {
+    font-size: 1.1em;
+  }
+  .payment-methods-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+  .payment-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .back-button,
+  .proceed-button {
+    width: 100%;
+  }
+}
+
+.payment-selection-container.hidden-content {
+    display: none; /* Esconde o conteúdo quando necessário */
+}
