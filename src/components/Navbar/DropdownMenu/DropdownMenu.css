@@ -1,0 +1,76 @@
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  color: var(--text-light);
+  border: none;
+  padding: 5px 0;
+  font-size: 1.1em;
+  font-weight: normal;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-toggle:hover {
+  color: var(--accent-gold);
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Abaixo do botão */
+  left: 0;
+  background-color: var(--secondary-dark); /* Fundo do dropdown */
+  border: 1px solid var(--border-color-dark);
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  list-style: none;
+  padding: 10px 0;
+  margin: 5px 0 0;
+  min-width: 150px;
+  z-index: 10; /* Garante que fique acima de outros elementos */
+  text-align: left;
+}
+
+.dropdown-menu li {
+  padding: 0; /* Zera padding padrão de li */
+  margin: 0; /* Zera margem padrão de li */
+}
+
+.dropdown-menu li a {
+  display: block; /* Para que o link ocupe todo o item */
+  padding: 8px 15px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: var(--light-bg-on-dark); /* Fundo no hover */
+  color: var(--accent-gold);
+}
+
+/* Ajuste para modo de alto contraste */
+body.high-contrast-mode .dropdown-toggle {
+    color: var(--hc-text) !important;
+}
+body.high-contrast-mode .dropdown-menu {
+    background-color: var(--hc-background) !important;
+    border-color: var(--hc-border) !important;
+}
+body.high-contrast-mode .dropdown-menu li a {
+    color: var(--hc-link) !important;
+}
+body.high-contrast-mode .dropdown-menu li a:hover {
+    background-color: var(--hc-button-bg) !important;
+    color: var(--hc-button-text) !important;
+}

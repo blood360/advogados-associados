@@ -1,4 +1,3 @@
-// src/components/Auth/Login/Login.jsx
 import React, { useState } from 'react';
 import './Login.css';
 
@@ -16,8 +15,11 @@ function Login({ onLoginSuccess, onSwitchToRegister }) {
       return;
     }
 
-    if (email === 'teste@adv.com' && password === '123456') {
-      onLoginSuccess({ email, name: 'Usuário Teste' });
+    // SIMULAÇÃO DE AUTENTICAÇÃO: CLIENTE E ADVOGADO
+    if (email === 'cliente@adv.com' && password === '123456') {
+      onLoginSuccess({ email, name: 'Usuário Cliente', type: 'client' });
+    } else if (email === 'advogado@adv.com' && password === 'adv123') { // Credenciais do advogado
+      onLoginSuccess({ email, name: 'Dr(a). Ana Paula', type: 'lawyer' });
     } else {
       setError('Email ou senha inválidos.');
     }

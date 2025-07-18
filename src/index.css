@@ -1,82 +1,118 @@
-/* src/index.css */
+:root {
+  --primary-dark: #0A101D; 
+  --secondary-dark: #1F2533;
+  --accent-gold: #FFD700;
+  --text-light: #F0F0F0;
+  --border-color-dark: #404B60;
+  --hover-gold: #CCA300;
+  --light-bg-on-dark: #303747;
+  --soft-gold-text: #EBCF8A;
 
-/* 1. Reset Básico (Melhoria) */
-/* Aplica um reset universal para remover margens e paddings padrão do navegador,
-   e garante que o box-sizing inclua padding e borda no tamanho do elemento. */
-*, *::before, *::after {
+  /* Novas Cores para Modo de Alto Contraste */
+  --hc-background: black;
+  --hc-text: yellow;
+  --hc-accent: cyan;
+  --hc-border: white;
+  --hc-button-bg: white;
+  --hc-button-text: black;
+  --hc-link: lime;
+}
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* 2. Estilos Globais para HTML e BODY */
-/* Estes estilos garantem que a página ocupe 100% da altura e largura da viewport,
-   e define um display flex para o body para gerenciar o layout vertical. */
-html, body {
+html, body, #root, .App {
   width: 100%;
-  height: 100%; /* Define height: 100% para o html e body */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
 }
 
-body {
-  min-height: 100vh; /* Garante que o body ocupe no mínimo 100% da altura visível */
-  display: flex; /* Habilita o Flexbox no body */
-  flex-direction: column; /* Organiza os filhos (principalmente o #root) em uma coluna */
-  
-  /* Defina a fonte padrão para toda a aplicação aqui. */
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  
-  /* Opcional: Define um background padrão para a página.
-     Seus componentes (Navbar, Hero, etc.) já definem seus próprios backgrounds. */
-  background-color: #f0f2f5; 
-}
-
-/* 3. Estilos para o Contêiner Principal da Aplicação (#root e .App) */
-/* Estes elementos precisam crescer para ocupar o espaço do body e se comportar como um contêiner flexível. */
-#root, .App {
-  width: 100%;
-  flex-grow: 1; /* Permite que #root e .App cresçam e preencham o espaço vertical restante do body */
-  display: flex; /* Habilita Flexbox para os componentes dentro do App */
-  flex-direction: column; /* Organiza os componentes (Navbar, Hero, Main) em uma coluna */
-}
-
-/* 4. Estilos para a tag <main> */
-/* A tag <main> deve ocupar o espaço vertical restante entre a Navbar/Hero e qualquer Rodapé. */
 main {
-  flex-grow: 1; /* Faz com que <main> se expanda e ocupe todo o espaço vertical disponível */
-  display: flex; /* Habilita Flexbox dentro do main para suas seções */
-  flex-direction: column; /* Organiza as seções da página em uma coluna */
-  width: 100%; /* Garante que main ocupe 100% da largura disponível */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Regras para o Modo de Alto Contraste */
+body.high-contrast-mode {
+  background-color: var(--hc-background) !important;
+  color: var(--hc-text) !important;
 }
 
-h1 { /* Seus componentes já estão estilizando h1 */
-  font-size: 3.2em;
-  line-height: 1.1;
+body.high-contrast-mode * {
+  background-color: transparent !important; /* Reseta backgrounds */
+  color: var(--hc-text) !important; /* Força cor do texto */
+  border-color: var(--hc-border) !important; /* Força cor das bordas */
+  box-shadow: none !important; /* Remove sombras */
+  text-shadow: none !important; /* Remove sombras de texto */
+  filter: none !important; /* Remove filtros */
+  opacity: 1 !important; /* Garante opacidade total */
 }
 
-button { /* Seus componentes já estão estilizando botões */
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+body.high-contrast-mode a {
+  color: var(--hc-link) !important; /* Links em ciano */
+  background-color: transparent !important;
 }
-button:hover {
-  border-color: #646cff;
+
+body.high-contrast-mode button,
+body.high-contrast-mode .section-button,
+body.high-contrast-mode .schedule-button,
+body.high-contrast-mode .hero-button,
+body.high-contrast-mode .submit-button,
+body.high-contrast-mode .back-button,
+body.high-contrast-mode .save-button,
+body.high-contrast-mode .save-prices-button,
+body.high-contrast-mode .save-specialties-button,
+body.high-contrast-mode .auth-button,
+body.high-contrast-mode .proceed-button,
+body.high-contrast-mode .filter-button.active,
+body.high-contrast-mode .lawyer-card.selected,
+body.high-contrast-mode .specialty-button.selected,
+body.high-contrast-mode .time-button.selected {
+  background-color: var(--hc-button-bg) !important;
+  color: var(--hc-button-text) !important;
+  border: 2px solid var(--hc-border) !important;
+  box-shadow: none !important;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+body.high-contrast-mode input,
+body.high-contrast-mode textarea,
+body.high-contrast-mode select {
+  background-color: var(--hc-background) !important;
+  color: var(--hc-text) !important;
+  border: 2px solid var(--hc-border) !important;
+  box-shadow: none !important;
+}
+
+body.high-contrast-mode input::placeholder,
+body.high-contrast-mode textarea::placeholder {
+  color: var(--hc-text) !important;
+  opacity: 0.7 !important;
+}
+/* Estilos para o react-datepicker em modo HC */
+body.high-contrast-mode .react-datepicker {
+  background-color: var(--hc-background) !important;
+  border-color: var(--hc-border) !important;
+}
+body.high-contrast-mode .react-datepicker__header,
+body.high-contrast-mode .react-datepicker__navigation--previous,
+body.high-contrast-mode .react-datepicker__navigation--next {
+  background-color: var(--hc-background) !important;
+  border-color: var(--hc-border) !important;
+}
+body.high-contrast-mode .react-datepicker__day--selected,
+body.high-contrast-mode .react-datepicker__day--selected:hover,
+body.high-contrast-mode .react-datepicker__day--keyboard-selected,
+body.high-contrast-mode .react-datepicker__day--highlighted {
+  background-color: var(--hc-button-bg) !important;
+  color: var(--hc-button-text) !important;
+  border: 1px solid var(--hc-border) !important;
 }

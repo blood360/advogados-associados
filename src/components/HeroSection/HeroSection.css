@@ -1,86 +1,130 @@
+/* src/components/HeroSection/HeroSection.css */
+
 .hero-container {
-    background: linear-gradient(to right, #004d99, #00264d);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 600px;
-    padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border-color-dark);
+  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.3);
+  /* As propriedades de background foram movidas para .hero-background-image-wrapper */
+}
+
+.hero-background-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* AGORA COM LARGURA E ALTURA PARA APARECER */
+  height: 100%; /* AGORA COM LARGURA E ALTURA PARA APARECER */
+  background-size: contain; /* A imagem se ajustará mantendo a proporção */
+  background-repeat: no-repeat;
+  background-position: bottom center; /* Posiciona a imagem na parte inferior e centralizada */
+  
+  /* Propriedades para a rotação 3D */
+  transform-style: preserve-3d; 
+  perspective: 1000px; 
+  transition: transform 0.1s linear; 
+  will-change: transform;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), var(--primary-dark) 80%); 
+  z-index: 1;
 }
 
 .hero-content {
-    max-width: 800px;
-}
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+} 
 
 .hero-title {
-    font-size: 3.8em;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-weight: bold;
+  font-size: 3.8em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: var(--accent-gold);
 }
 
 .hero-subtitle {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    line-height: 1.5;
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  color: var(--text-light);
 }
 
 .hero-button {
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    font-size: 1.3em;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  border: none;
+  padding: 15px 35px;
+  font-size: 1.3em;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
 }
 
 .hero-button:hover {
-    background-color: #cc7a00;
-    transform: translateY(-3px);
+  background-color: var(--hover-gold);
+  transform: translateY(-3px);
 }
 
-/*Responsividade Básica*/
 @media (max-width: 1024px) {
-    .hero-title {
-        font-size: 3em;
-    }
-    .hero-subtitle {
-        font-size: 1.3em;
-    }
+  .hero-title {
+    font-size: 3em;
+  }
+  .hero-subtitle {
+    font-size: 1.3em;
+  }
 }
 
 @media (max-width: 768px) {
-    .hero-container {
-        height: 500px;
-    }
-    .hero-title {
-        font-size: 2.5em;
-    }
-    .hero-subtitle {
-        font-size: 1.1em;
-    }
-    .hero-button {
-        padding: 12px 25px;
-        font-size: 1.1em;
-    }
+  .hero-container {
+    height: 400px;
+    /* background-position: center bottom; - esta propriedade está no wrapper da imagem */
+  }
+  .hero-title {
+    font-size: 2.5em;
+  }
+  .hero-subtitle {
+    font-size: 1.1em;
+  }
+  .hero-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+  /* Posiciona a imagem em telas menores para não ficar muito cortada */
+  .hero-background-image-wrapper {
+    background-position: center bottom;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-container {
-        height: 400px;
-    }
-    .hero-title {
-        font-size: 2em;
-    }
-    .hero-subtitle {
-        font-size: 0.9em;
-    }
-    .hero-button {
-        font-size: 1em;
-    }
+  .hero-container {
+    height: 350px;
+  }
+  .hero-title {
+    font-size: 2em;
+  }
+  .hero-subtitle {
+    font-size: 0.9em;
+  }
+  .hero-button {
+    font-size: 1em;
+  }
 }

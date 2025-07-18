@@ -1,0 +1,114 @@
+.profile-edit-container {
+  background-color: var(--secondary-dark);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  border: 1px solid var(--border-color-dark);
+  color: var(--text-light);
+}
+
+.profile-edit-container h2 {
+  font-size: 2em;
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+}
+
+.profile-edit-container p {
+  font-size: 1em;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-section {
+  border: 1px solid var(--border-color-dark);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--light-bg-on-dark);
+}
+
+.form-section legend {
+  font-size: 1.4em;
+  color: var(--accent-gold);
+  font-weight: bold;
+  padding: 0 10px;
+  margin-left: -10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95em;
+  color: var(--accent-gold); /* Labels em dourado */
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color-dark);
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: var(--primary-dark); /* Fundo do input escuro */
+  color: white; /* Texto digitado branco puro */
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.save-profile-button {
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.save-profile-button:hover {
+  background-color: var(--hover-gold);
+}
+
+@media (max-width: 768px) {
+  .profile-edit-container {
+    padding: 20px;
+  }
+  .profile-edit-container h2 {
+    font-size: 1.8em;
+  }
+  .form-section {
+    padding: 15px;
+  }
+  .form-section legend {
+    font-size: 1.2em;
+  }
+}

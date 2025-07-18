@@ -2,36 +2,38 @@
 
 .service-selection-container {
   padding: 40px 20px;
-  background-color: white;
+  background-color: var(--secondary-dark); /* Fundo escuro */
+  color: var(--text-light);
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   max-width: 1000px;
   margin: 40px auto;
-  text-align: center;
+  border: 1px solid var(--border-color-dark);
 }
 
 .service-selection-title {
   font-size: 2.2em;
-  color: #003366;
+  color: var(--accent-gold); /* Título em dourado */
   margin-bottom: 30px;
   font-weight: bold;
   text-align: center;
 }
 
-.service-cards-grid { /* Nome da classe CORRETO e consistente */
+.service-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* CORREÇÃO AQUI: 'columns' removido, dois pontos no lugar */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   justify-content: center;
 }
 
 .service-card {
-  background-color: #f8f8f8;
+  background-color: var(--light-bg-on-dark); /* Um tom mais claro de escuro para o card */
+  color: var(--text-light);
   padding: 25px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color-dark);
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -40,28 +42,28 @@
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border-color: #004d99;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-gold); /* Borda dourada no hover */
 }
 
 .card-name {
   font-size: 1.6em;
-  color: #003366;
+  color: var(--soft-gold-text); /* Nome do card em dourado suave */
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .card-description {
   font-size: 1em;
-  color: #666;
+  color: var(--text-light);
   line-height: 1.5;
   margin-bottom: 20px;
   flex-grow: 1;
 }
 
 .card-button {
-  background-color: #ff9900;
-  color: white;
+  background-color: var(--accent-gold); /* Botão em dourado */
+  color: var(--primary-dark); /* Texto escuro */
   border: none;
   padding: 10px 20px;
   font-size: 1em;
@@ -73,7 +75,7 @@
 }
 
 .card-button:hover {
-  background-color: #cc7a00;
+  background-color: var(--hover-gold);
 }
 
 @media (max-width: 768px) {
@@ -84,7 +86,7 @@
   .service-selection-title {
     font-size: 1.8em;
   }
-  .service-cards-grid { /* CORREÇÃO AQUI: nome da classe consistente 'service-cards-grid' */
+  .service-cards-grid {
     grid-template-columns: 1fr;
   }
   .service-card {
@@ -93,7 +95,7 @@
   .card-name {
     font-size: 1.4em;
   }
-  .card-description { /* CORREÇÃO AQUI: chaves e fechamento de bloco */
+  .card-description {
     font-size: 0.9em;
   }
 }

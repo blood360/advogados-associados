@@ -1,0 +1,105 @@
+.partners-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.partners-main-content {
+  flex-grow: 1;
+  padding: 40px 20px;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  text-align: center;
+}
+
+.partners-title {
+  font-size: 3em;
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+}
+
+.partners-subtitle {
+  font-size: 1.2em;
+  color: var(--text-light);
+  margin-bottom: 50px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.partner-card {
+  background-color: var(--secondary-dark);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color-dark);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Centraliza itens no card */
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.partner-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 5px; /* Levemente arredondado */
+  border: 1px solid var(--border-color-dark);
+}
+
+.partner-name {
+  font-size: 1.8em;
+  color: var(--soft-gold-text);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.partner-description {
+  font-size: 1em;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.partner-website-link {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Empurra para o final do card */
+}
+
+.partner-website-link:hover {
+  background-color: var(--hover-gold);
+}
+
+@media (max-width: 768px) {
+  .partners-title {
+    font-size: 2.5em;
+  }
+  .partners-subtitle {
+    font-size: 1em;
+  }
+  .partners-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}

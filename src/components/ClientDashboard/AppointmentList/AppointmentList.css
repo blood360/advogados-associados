@@ -1,0 +1,97 @@
+.appointment-list-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.no-appointments-message {
+  font-size: 1em;
+  color: #777;
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.appointment-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appointment-item {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 15px; /* Espaço entre detalhes e status */
+}
+
+.appointment-service {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 5px;
+}
+
+.appointment-lawyer,
+.appointment-date-time,
+.appointment-type {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.appointment-status {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+  white-space: nowrap; /* Evita que o status quebre em várias linhas */
+}
+
+.status-agendada {
+  background-color: #e0f2f7; /* Azul claro */
+  color: #01579b; /* Azul escuro */
+}
+
+.status-concluida {
+  background-color: #e8f5e9; /* Verde claro */
+  color: #2e7d32; /* Verde escuro */
+}
+
+.status-concluida {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-cancelada {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+@media (max-width: 600px) {
+  .appointment-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .appointment-details {
+    margin-right: 0;
+    width: 100%;
+  }
+  .appointment-status {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -2,17 +2,19 @@
 
 .appointment-details-form-container {
   padding: 40px 30px;
-  background-color: white;
+  background-color: var(--secondary-dark); 
+  color: var(--text-light);
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   max-width: 800px;
   margin: 40px auto;
   text-align: left;
+  border: 1px solid var(--border-color-dark); 
 }
 
 .details-form-title {
   font-size: 2.2em;
-  color: #003366;
+  color: var(--accent-gold);
   margin-bottom: 10px;
   font-weight: bold;
   text-align: center;
@@ -20,14 +22,14 @@
 
 .details-form-subtitle {
   font-size: 1.1em;
-  color: #666;
+  color: var(--text-light);
   margin-bottom: 30px;
   text-align: center;
 }
 
 .summary-box {
-  background-color: #e6f0fa; /* Azul claro */
-  border: 1px solid #cce0f0;
+  background-color: var(--primary-dark);
+  border: 1px solid var(--border-color-dark);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 30px;
@@ -35,35 +37,35 @@
 
 .summary-box h3 {
   font-size: 1.5em;
-  color: #003366;
+  color: var(--accent-gold);
   margin-bottom: 15px;
   text-align: center;
 }
 
 .summary-box p {
   font-size: 1em;
-  color: #444;
+  color: var(--text-light);
   margin-bottom: 8px;
 }
 
 .summary-box p strong {
-  color: #004d99;
+  color: var(--soft-gold-text);
 }
 
 .form-section {
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-color-dark);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 30px;
-  background-color: #fcfcfc;
+  background-color: var(--light-bg-on-dark); 
 }
 
 .form-section legend {
   font-size: 1.4em;
-  color: #003366;
+  color: var(--accent-gold); 
   font-weight: bold;
   padding: 0 10px;
-  margin-left: -10px; /* Ajusta a posição da legenda */
+  margin-left: -10px;
 }
 
 .radio-group {
@@ -77,19 +79,20 @@
   display: flex;
   align-items: center;
   font-size: 1em;
-  color: #333;
+  color: white; /* BRANCO PURO para os labels dos radio buttons */
   cursor: pointer;
 }
 
 .radio-group input[type="radio"] {
   margin-right: 8px;
-  transform: scale(1.2); /* Aumenta o tamanho do radio button */
+  transform: scale(1.2);
+  accent-color: var(--accent-gold); 
 }
 
 .invoice-type-group {
   margin-top: 15px;
-  padding-left: 20px; /* Recua um pouco para indicar sub-opção */
-  border-left: 3px solid #ff9900; /* Linha laranja para destaque */
+  padding-left: 20px;
+  border-left: 3px solid var(--accent-gold);
 }
 
 .form-group {
@@ -99,7 +102,8 @@
 .form-group label {
   display: block;
   font-size: 0.95em;
-  color: #333;
+  background-color: var(--light-bg-on-dark);
+  color: var(--accent-gold); /* DOURADO VIBRANTE para os labels dos inputs principais */
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -108,27 +112,35 @@
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group textarea {
-  width: calc(100% - 20px); /* Ajusta para padding */
+  width: calc(100% - 20px);
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color-dark);
   border-radius: 5px;
   font-size: 1em;
-  color: #555;
-  box-sizing: border-box; /* Inclui padding e borda na largura */
+  background-color: var(--light-bg-on-dark); /* FUNDO DO INPUT MAIS CLARO PARA MELHOR CONTRASTE */
+  color: white; /* TEXTO DIGITADO BRANCO PURO */
+  box-sizing: border-box;
+}
+
+/* Estilo para o placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* BRANCO SEMI-TRANSPARENTE */
+  opacity: 1; /* Garante que a opacidade padrão do navegador não interfira */
 }
 
 .form-group textarea {
-  resize: vertical; /* Permite redimensionar verticalmente */
+  resize: vertical;
   min-height: 80px;
 }
 
 .payment-placeholder {
   font-style: italic;
-  color: #777;
+  color: var(--text-light);
   font-size: 0.9em;
   padding: 10px;
-  background-color: #f9f9f9;
-  border: 1px dashed #ddd;
+  background-color: var(--primary-dark);
+  border: 1px dashed var(--border-color-dark);
   border-radius: 5px;
   text-align: center;
 }
@@ -151,24 +163,23 @@
 }
 
 .back-button {
-  background-color: #6c757d; /* Cinza */
-  color: white;
+  background-color: var(--border-color-dark);
+  color: var(--text-light);
 }
 
 .back-button:hover {
-  background-color: #5a6268;
+  background-color: #555;
 }
 
 .submit-button {
-  background-color: #004d99; /* Azul principal */
-  color: white;
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
 }
 
 .submit-button:hover {
-  background-color: #003366;
+  background-color: var(--hover-gold);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .appointment-details-form-container {
     padding: 20px 15px;
@@ -187,12 +198,13 @@
   }
   .form-section {
     padding: 15px;
+    color: white; /* Esta regra já estava aqui e ajuda a garantir o branco */
   }
   .form-section legend {
     font-size: 1.2em;
   }
   .radio-group {
-    flex-direction: column; /* Empilha os radios em telas pequenas */
+    flex-direction: column;
     gap: 10px;
   }
   .form-actions {
@@ -201,6 +213,6 @@
   }
   .back-button,
   .submit-button {
-    width: 100%; /* Botões ocupam largura total */
+    width: 100%;
   }
 }

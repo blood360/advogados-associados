@@ -1,9 +1,10 @@
+// src/pages/HomePage/HomePage.jsx
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import HeroSection from '../../components/HeroSection/HeroSection';
 import HighlightsSection from '../../components/HighlightsSection/HighlightsSection';
-import AboutSection from '../../components/AboutSection/AboutSection';
 import Footer from '../../components/Footer/Footer';
+// REMOVIDO: import AboutSection from '../../components/AboutSection/AboutSection';
 
 function HomePage() {
   return (
@@ -11,11 +12,10 @@ function HomePage() {
       <Navbar />
       <HeroSection />
       <HighlightsSection />
-      <AboutSection />
-
+      
       <main>
-        <section style={{ padding: '50px', textAlign: 'center', fontSize: '1.2em', backgroundColor: '#f0f2f5' }}>
-          Conteúdo adicional da página inicial.
+        <section style={{ padding: '50px', textAlign: 'center', fontSize: '1.2em', backgroundColor: 'var(--primary-dark)', color: 'var(--text-light)' }}>
+          Explore mais sobre nossos serviços e a equipe que faz a diferença.
         </section>
       </main>
 

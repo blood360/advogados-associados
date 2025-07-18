@@ -2,29 +2,31 @@
 
 .payment-selection-container {
   padding: 40px 30px;
-  background-color: white;
+  background-color: var(--secondary-dark); /* Fundo escuro */
+  color: var(--text-light);
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   max-width: 900px;
   margin: 40px auto;
   text-align: center;
+  border: 1px solid var(--border-color-dark);
 }
 
 .payment-title {
   font-size: 2.2em;
-  color: #003366;
+  color: var(--accent-gold); /* Título em dourado */
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .payment-subtitle {
   font-size: 1.3em;
-  color: #555;
+  color: var(--text-light);
   margin-bottom: 30px;
 }
 
 .payment-subtitle strong {
-  color: #ff9900;
+  color: var(--accent-gold); /* Dourado para o valor */
   font-size: 1.2em;
 }
 
@@ -40,43 +42,44 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: var(--light-bg-on-dark); /* Fundo do card mais claro escuro */
+  color: var(--text-light);
   padding: 25px;
   border-radius: 8px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border-color-dark);
   cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .payment-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border-color: #004d99; /* Borda azul no hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-gold);
 }
 
 .payment-card.selected {
-  border-color: #004d99; /* Borda azul mais forte quando selecionado */
-  background-color: #e6f0fa; /* Fundo mais claro quando selecionado */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-gold); /* Borda dourada quando selecionado */
+  background-color: var(--primary-dark); /* Fundo mais escuro quando selecionado */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
 }
 
 .payment-card h3 {
   font-size: 1.5em;
-  color: #003366;
+  color: var(--soft-gold-text); /* Título em dourado suave */
   margin-bottom: 10px;
 }
 
 .payment-card p {
   font-size: 0.9em;
-  color: #666;
-  flex-grow: 1; /* Para empurrar o logo para baixo se necessário */
+  color: var(--text-light);
+  flex-grow: 1;
   margin-bottom: 15px;
 }
 
 .payment-logo {
   max-width: 60px;
   height: auto;
-  display: block; /* Remove espaçamento indesejado */
+  display: block;
 }
 
 .payment-actions {
@@ -97,24 +100,23 @@
 }
 
 .back-button {
-  background-color: #6c757d; /* Cinza */
-  color: white;
+  background-color: var(--border-color-dark); /* Cinza escuro */
+  color: var(--text-light);
 }
 
 .back-button:hover {
-  background-color: #5a6268;
+  background-color: #555;
 }
 
 .proceed-button {
-  background-color: #ff9900; /* Laranja */
-  color: white;
+  background-color: var(--accent-gold); /* Laranja */
+  color: var(--primary-dark); /* Texto escuro */
 }
 
 .proceed-button:hover {
-  background-color: #cc7a00;
+  background-color: var(--hover-gold);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .payment-selection-container {
     padding: 20px 15px;
@@ -126,7 +128,7 @@
     font-size: 1.1em;
   }
   .payment-methods-grid {
-    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    grid-template-columns: 1fr;
   }
   .payment-actions {
     flex-direction: column;
@@ -136,8 +138,4 @@
   .proceed-button {
     width: 100%;
   }
-}
-
-.payment-selection-container.hidden-content {
-    display: none; /* Esconde o conteúdo quando necessário */
 }

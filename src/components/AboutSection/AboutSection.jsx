@@ -10,7 +10,7 @@ function AboutSection() {
             </div>
             <div className='about-content'>
                 <h2 className='about-title'>Apresentação da Fundadora</h2>
-                <h3 className='about-name'>[Nome Completo da Advogada]</h3>
+                <h3 className='about-name'>Ana Paula</h3>
                 <p className='about-description'>Com mais de [ XX ] anos de de experiência, [NOME] fundou esta plataforma com a missão de tornar a justiça mais acessível e humana. Sua paixão pelo Direito é guiada por princípios de ética, transparência e empatia, especialmente em áreas mais sensíveis como direitos previdenciários, trabalhistas, civis e a defesa de pessoas com TEA e animais.</p>
                 <p className='about-description'>Acreditamos que cada caso é único e merece atenção dedicada. Nosso objetivo é oferecer um atendimento jurídico que entenda suas necessidades e construa soluções eficazes e personalizadas.</p>
                 <a href="/advogada-completo" className='about-button'>Saiba mais sobre a Advogada</a>

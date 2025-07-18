@@ -1,0 +1,19 @@
+.advogada-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.advogada-main-content {
+  flex-grow: 1;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  padding: 40px 20px;
+}
+/* O AboutSection já tem seus próprios paddings e max-width, então não precisa de muito aqui */
+
+@media (max-width: 768px) {
+  .advogada-main-content {
+    padding: 20px 10px;
+  }
+}

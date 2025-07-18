@@ -1,35 +1,37 @@
+/* src/pages/AgendamentoPage/AgendamentoPage.css */
+
 .agendamento-page-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que a página ocupe toda a altura */
+  min-height: 100vh;
 }
 
 .agendamento-main-content {
-  flex-grow: 1; /* Ocupa o espaço restante */
+  flex-grow: 1;
   padding: 40px 20px;
-  text-align: center;
-  background-color: #f0f2f5; /* Fundo claro para a página */
+  background-color: var(--primary-dark); /* Fundo principal escuro */
+  color: var(--text-light); /* Cor do texto padrão */
 }
 
 .agendamento-title {
   font-size: 2.8em;
-  color: #003366;
+  color: var(--accent-gold); /* Título em dourado */
   margin-bottom: 20px;
 }
 
 .agendamento-description {
   font-size: 1.2em;
-  color: #555;
+  color: var(--text-light);
   margin-bottom: 40px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/*botões*/
-.agendamento-back-button, .agendamento-confirm-button {
-  background-color: #004d99;
-  color: white;
+.agendamento-back-button,
+.agendamento-confirm-button {
+  background-color: var(--accent-gold); /* Botões em dourado */
+  color: var(--primary-dark); /* Texto escuro */
   border: none;
   padding: 12px 25px;
   font-size: 1em;
@@ -40,38 +42,64 @@
   margin-top: 30px;
 }
 
-.agendamento-back-button:hover, .agendamento-confirm-button:hover {
-  background-color: #003366;
+.agendamento-back-button:hover,
+.agendamento-confirm-button:hover {
+  background-color: var(--hover-gold);
 }
 
-/*resumo de agendamento*/
 .agendamento-summary {
   padding: 40px;
-  background-color: white;
+  background-color: var(--secondary-dark); /* Fundo do resumo escuro */
+  color: var(--text-light);
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   max-width: 700px;
   margin: 40px auto;
-  text-align: center;
+  text-align: left;
+  border: 1px solid var(--border-color-dark);
 }
 
 .agendamento-summary h2 {
   font-size: 2em;
-  color: #003366;
+  color: var(--accent-gold); /* Título em dourado */
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .agendamento-summary p {
   font-size: 1.1em;
-  color: #444;
+  color: var(--text-light);
   margin-bottom: 10px;
 }
 
 .agendamento-summary p strong {
-  color: #003366;
+  color: var(--soft-gold-text); /* Dourado suave para destaque */
 }
 
-/* Responsividade */
+.agendamento-success-message {
+  padding: 50px;
+  background-color: var(--light-bg-on-dark); /* Um fundo um pouco mais claro mas ainda escuro */
+  border: 1px solid var(--accent-gold); /* Borda dourada para sucesso */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.agendamento-success-message h2 {
+  font-size: 2.5em;
+  color: var(--accent-gold); /* Título de sucesso em dourado */
+  margin-bottom: 20px;
+}
+
+.agendamento-success-message p {
+  font-size: 1.2em;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
   .agendamento-main-content {
     padding: 30px 15px;
@@ -82,7 +110,8 @@
   .agendamento-description {
     font-size: 1em;
   }
-  .agendamento-back-button, .agendamento-confirm-button {
+  .agendamento-back-button,
+  .agendamento-confirm-button {
     padding: 10px 20px;
     font-size: 0.9em;
   }

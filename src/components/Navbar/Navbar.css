@@ -1,99 +1,134 @@
+/* src/components/Navbar/Navbar.css */
+
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: #003366;
-    color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--secondary-dark);
+  color: var(--text-light);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid var(--border-color-dark);
 }
 
 .navbar-logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.8em;
-    font-weight: bold;
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
 .navbar-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.navbar-links li {
-    margin-right: 30px;
-}
-
-.navbar-links li:last-child {
-    margin-right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center; /* Alinha itens verticalmente */
+  gap: 25px; /* Espaçamento entre os links */
 }
 
 .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 5px 0;
-    transition: color 0.3s ease-in-out;
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 5px 0;
+  transition: color 0.3s ease-in-out;
 }
 
 .navbar-links a:hover {
-    color: #a7d9ff;
+  color: var(--accent-gold);
 }
 
 .navbar-actions {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaçamento entre os botões de ação */
 }
 
-.whatsapp-link, .logo-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-right: 25px;
-    transition: color 0.3s ease-in-out;
+/* Ajustes para alinhar WhatsApp/Agendar Consulta/Entrar */
+.whatsapp-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1em;
+  /* margin-right: 25px; REMOVIDO, AGORA USA GAP */
+  transition: color 0.3s ease-in-out;
 }
 
-.whatsapp-link:hover, .logo-link:hover {
-    color: #a7d9ff;
+.whatsapp-link:hover {
+  color: var(--accent-gold);
 }
 
-.schedule-button {
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+/* O botão de agendar consulta foi removido. Ajuste o login-link. */
+.login-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease-in-out;
+  /* margin-left: auto; para empurrar para a direita se quiser */
 }
 
-.schedule-button:hover {
-    background-color: #cc7a00;
-    transform: scale(1.05);
+.login-link:hover {
+  color: var(--accent-gold);
 }
 
-/*Responsividade para telas menores*/
+/* Botoes de Acessibilidade */
+.accessibility-toggle-button,
+.accessibility-read-button {
+  background-color: var(--light-bg-on-dark);
+  color: var(--text-light);
+  border: 1px solid var(--border-color-dark);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* margin-left: 15px; REMOVIDO, AGORA USA GAP */
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accessibility-toggle-button:hover,
+.accessibility-read-button:hover {
+  background-color: var(--secondary-dark);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+body.high-contrast-mode .accessibility-toggle-button,
+body.high-contrast-mode .accessibility-read-button {
+    background-color: var(--hc-button-bg) !important;
+    color: var(--hc-button-text) !important;
+    border: 2px solid var(--hc-border) !important;
+}
+
+/* REMOVIDO: .accessibility-toggle-button + .accessibility-read-button { margin-left: 10px; } */
+
 @media (max-width: 768px) {
-    .navbar-container {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
-    .navbar-links {
-        flex-direction: column;
-        margin: 15px 0;
-        text-align: center;
-    }
-    .navbar-links li {
-        margin: 8px 0;
-    }
-    .navbar-actions {
-        flex-direction: column;
-    }
-    .whatsapp-link, login-link {
-        margin: 10px 0;
-    }
+  .navbar-container {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    margin: 15px 0;
+    text-align: center;
+    gap: 10px; /* Ajuste o gap para coluna */
+  }
+
+  .navbar-links li {
+    margin: 0; /* Zera margem para evitar conflito com gap */
+  }
+
+  .navbar-actions {
+    flex-direction: column;
+    gap: 10px; /* Ajuste o gap para coluna */
+  }
+
+  .whatsapp-link,
+  .login-link {
+    margin: 0; /* Zera margem para evitar conflito com gap */
+  }
 }

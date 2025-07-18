@@ -1,66 +1,74 @@
+/* src/components/HighlightsSection/HighlightsSection.css */
+
 .highlights-container {
-    padding: 60px 20px;
-    background-color: #f8f8f8;
-    text-align: center;
+  padding: 60px 20px;
+  background-color: var(--primary-dark); /* Fundo principal escuro */
+  text-align: center;
+  border-bottom: 1px solid var(--border-color-dark);
 }
 
 .highlights-title {
-    font-size: 2.8em;
-    color: #003366;
-    margin-bottom: 50px;
-    font-weight: bold;
+  font-size: 2.8em;
+  color: var(--accent-gold); /* Título em dourado */
+  margin-bottom: 50px;
+  font-weight: bold;
 }
 
 .highlights-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .highlight-item {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+  background-color: var(--secondary-dark); /* Fundo dos cards escuro */
+  color: var(--text-light); /* Texto claro */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid var(--border-color-dark);
 }
 
 .highlight-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-gold); /* Borda dourada no hover */
 }
 
 .highlight-icon {
-    font-size: 3.5em;
-    color: #ff9900;
-    margin-bottom: 20px;
-    line-height: 1;
+  font-size: 3.5em;
+  color: var(--accent-gold); /* Ícone em dourado */
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
 .highlight-item h3 {
-    font-size: 1.8em;
-    color: #003366;
-    margin-bottom: 15px;
-    font-weight: bold;
+  font-size: 1.8em;
+  color: var(--soft-gold-text); /* Título do card em dourado suave */
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .highlight-item p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
+  font-size: 1.1em;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-/*Respondividade*/
-@media (max-width:768px) {
-    .highlights-title {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-    .highlights-grid {
-        grid-template-columns: 1fr;
-    }
-    .highlight-item {
-        padding: 25px;
-    }
+@media (max-width: 768px) {
+  .highlights-title {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight-item {
+    padding: 25px;
+  }
 }

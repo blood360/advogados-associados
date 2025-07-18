@@ -1,0 +1,121 @@
+.pricing-config-container {
+  background-color: var(--secondary-dark);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+  border: 1px solid var(--border-color-dark);
+  color: var(--text-light);
+}
+
+.pricing-config-container h2 {
+  font-size: 2em;
+  color: var(--accent-gold);
+  margin-bottom: 15px;
+}
+
+.pricing-config-container p {
+  font-size: 1em;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.pricing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-bg-on-dark);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color-dark);
+}
+
+.pricing-item label {
+  font-size: 1.1em;
+  color: var(--soft-gold-text); /* Nome do serviço em dourado suave */
+  flex-grow: 1;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.price-input-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price-input-group span {
+  font-size: 1em;
+  color: var(--text-light);
+}
+
+.price-input-group input[type="number"] {
+  width: 120px;
+  padding: 8px 10px;
+  border: 1px solid var(--border-color-dark);
+  border-radius: 5px;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  font-size: 1em;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+/* Esconder setas de incremento/decremento em inputs number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.save-prices-button {
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.save-prices-button:hover {
+  background-color: var(--hover-gold);
+}
+
+@media (max-width: 600px) {
+  .pricing-config-container {
+    padding: 20px;
+  }
+  .pricing-config-container h2 {
+    font-size: 1.8em;
+  }
+  .pricing-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pricing-item label {
+    width: 100%;
+    margin-right: 0;
+  }
+  .price-input-group {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

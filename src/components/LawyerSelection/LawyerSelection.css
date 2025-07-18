@@ -2,25 +2,31 @@
 
 .lawyer-selection-container {
   padding: 40px 20px;
-  background-color: white;
+  background-color: var(--secondary-dark);
+  color: var(--text-light);
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   max-width: 1000px;
   margin: 40px auto;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
+  border: 1px solid var(--border-color-dark);
 }
 
 .lawyer-selection-title {
   font-size: 2.2em;
-  color: #003366;
+  color: var(--accent-gold);
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 .current-service-info {
   font-size: 1.1em;
-  color: #555;
+  color: var(--text-light);
   margin-bottom: 30px;
+}
+
+.current-service-info strong {
+  color: var(--soft-gold-text);
 }
 
 .lawyer-cards-grid {
@@ -31,44 +37,45 @@
 }
 
 .lawyer-card {
-  background-color: #f8f8f8;
+  background-color: var(--light-bg-on-dark);
+  color: var(--text-light);
   padding: 20px;
   border-radius: 8px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border-color-dark);
   cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   text-align: left;
-  position: relative; /* Para o indicador de selecionado */
+  position: relative;
 }
 
 .lawyer-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border-color: #004d99; /* Borda azul no hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-gold);
 }
 
 .lawyer-card.selected {
-  border-color: #004d99; /* Borda azul mais forte quando selecionado */
-  background-color: #e6f0fa; /* Fundo mais claro quando selecionado */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-gold);
+  background-color: var(--primary-dark);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
 }
 
 .lawyer-card h3 {
   font-size: 1.5em;
-  color: #003366;
+  color: var(--soft-gold-text);
   margin-bottom: 8px;
   font-weight: 700;
 }
 
 .lawyer-card p {
   font-size: 0.95em;
-  color: #666;
+  color: var(--text-light);
   line-height: 1.4;
 }
 
 .lawyer-card p:last-of-type {
   font-weight: bold;
-  color: #ff9900;
+  color: var(--accent-gold);
   margin-top: 10px;
 }
 
@@ -76,7 +83,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #4CAF50; /* Verde */
+  background-color: #4CAF50;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -84,40 +91,105 @@
   font-weight: bold;
 }
 
+.no-lawyer-message {
+  font-size: 1.1em;
+  color: var(--text-light);
+  padding: 20px;
+  background-color: var(--light-bg-on-dark);
+  border-radius: 8px;
+  text-align: center;
+  grid-column: 1 / -1; /* Ocupa todas as colunas no grid */
+}
+
 .availability-section {
-  background-color: #f0f5f9; /* Fundo ligeiramente diferente */
+  background-color: var(--light-bg-on-dark);
   padding: 30px;
   border-radius: 8px;
-  border: 1px solid #d0d8e2;
+  border: 1px solid var(--border-color-dark);
   margin-top: 30px;
 }
 
 .availability-section h3 {
   font-size: 1.8em;
-  color: #003366;
+  color: var(--accent-gold);
   margin-bottom: 25px;
   font-weight: bold;
 }
 
-.date-picker {
-  margin-bottom: 25px;
-}
-
-.date-picker h4 {
+.date-picker-container h4 {
   font-size: 1.2em;
-  color: #333;
-  margin-bottom: 10px;
+  color: var(--text-light);
+  margin-bottom: 15px;
 }
 
-.date-picker select {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1em;
-  background-color: white;
-  cursor: pointer;
+/* Estilos para o react-datepicker */
+.react-datepicker {
+  background-color: var(--primary-dark); /* Fundo do calendário */
+  border: 1px solid var(--border-color-dark);
+  border-radius: 8px;
+  font-family: inherit;
+  color: var(--text-light);
+  padding: 10px;
+}
+
+.react-datepicker__header {
+  background-color: var(--secondary-dark); /* Fundo do cabeçalho (mês, ano) */
+  border-bottom: 1px solid var(--border-color-dark);
+  padding-top: 10px;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--accent-gold); /* Mês/Ano e Nomes dos dias da semana em dourado */
+  font-weight: bold;
+}
+
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+  border-color: var(--accent-gold); /* Setas de navegação em dourado */
+}
+.react-datepicker__navigation-icon::before {
+  border-color: var(--accent-gold) !important;
+}
+
+.react-datepicker__day {
+  color: var(--text-light); /* Dias do mês em branco/claro */
+  transition: background-color 0.2s ease;
+}
+
+.react-datepicker__day--highlighted {
+  background-color: var(--light-bg-on-dark); /* Dias com disponibilidade mais claros */
+  color: var(--accent-gold); /* Texto em dourado */
+  border-radius: 50%;
+}
+
+.react-datepicker__day--highlighted:hover {
+  background-color: var(--secondary-dark);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--selected:hover {
+  background-color: var(--accent-gold); /* Dia selecionado em dourado */
+  color: var(--primary-dark); /* Texto escuro */
+  border-radius: 50%;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--hover-gold); /* Fundo ao selecionar com teclado */
+  color: var(--primary-dark);
+  border-radius: 50%;
+}
+
+.react-datepicker__day--outside-month {
+  color: #555 !important; /* Dias fora do mês atual, mais escuros */
+}
+
+.react-datepicker__day--disabled {
+  color: #777 !important; /* Dias desabilitados, mais escuros */
+  cursor: not-allowed;
+}
+.react-datepicker__day--disabled.react-datepicker__day--outside-month {
+  color: #444 !important; /* Combinação desabilitado + fora do mês */
 }
 
 .time-slots {
@@ -126,7 +198,7 @@
 
 .time-slots h4 {
   font-size: 1.2em;
-  color: #333;
+  color: var(--text-light);
   margin-bottom: 15px;
 }
 
@@ -138,9 +210,9 @@
 }
 
 .time-button {
-  background-color: #004d99; /* Azul para horários disponíveis */
-  color: white;
-  border: 1px solid #004d99;
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  border: 1px solid var(--accent-gold);
   padding: 10px 15px;
   font-size: 1em;
   font-weight: bold;
@@ -150,16 +222,16 @@
 }
 
 .time-button:hover {
-  background-color: #003366;
-  border-color: #003366;
+  background-color: var(--hover-gold);
+  border-color: var(--hover-gold);
 }
 
 .time-button.selected {
-  background-color: #ff9900; /* Laranja quando selecionado */
-  border-color: #ff9900;
+  background-color: var(--primary-dark);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .lawyer-selection-container {
     padding: 20px 10px;
@@ -180,6 +252,6 @@
     padding: 20px;
   }
   .time-grid {
-    justify-content: flex-start; /* Alinha à esquerda em telas menores */
+    justify-content: flex-start;
   }
 }
